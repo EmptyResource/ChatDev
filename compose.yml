@@ -9,9 +9,9 @@ services:
       - .:/app
     ports:
       - "6400:6400"
-    env_file:
-      - .env
-      - .env.docker
+    environment:
+      API_KEY: ${API_KEY}
+      BASE_URL: ${BASE_URL}
     restart: unless-stopped
 
   frontend:
